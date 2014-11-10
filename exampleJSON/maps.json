@@ -1,0 +1,40 @@
+{
+  "bot_name": "battle-bott-1e",
+  "maps" :[
+
+  {
+    "ships": [
+      {
+        "size": 5,
+        "position": "A1",
+        "direction": "horizontal"
+      },
+      {
+        "size": 4,
+        "position": "A3",
+        "direction": "horizontal"
+      },
+      {
+        "size": 3,
+        "position": "A3",
+        "direction": "horizontal"
+      },
+      {
+        "size": 3,
+        "position": "A4",
+        "direction": "horizontal"
+      },
+      {
+        "size": 2,
+        "position": "A5",
+        "direction": "horizontal"
+      },
+      {
+        "size": 2,
+        "position": "A6",
+        "direction": "vertical"
+      }
+    ]
+  }
+  ]
+}
