@@ -1,14 +1,14 @@
 import urllib2, random, json
 
 
+apitoken = ''
+baseurl = 'https://battleships.allsecuredomains.com/api/v1/'
 
 def main():
 
 	botname = "battle-bott-1e"
 
 	mapstobuild = 2
-	apitoken = ''
-	baseurl = 'https://battleships.allsecuredomains.com/api/v1/'
 	maps  = []
 	payload = { "bot_name" : None, "maps" : None}
 	payload['bot_name'] = botname
@@ -20,8 +20,29 @@ def main():
 		maps.append(ships)
 		i +=1
 
-	print json.dumps(payload, indent=4)
 
+	# print json.dumps(payload, indent=4)
+
+	data = postMaps(payload)
+	if data:
+		# start
+
+		print data
+		print "posted"
+
+
+
+
+def postMaps(payload):
+	# print baseurl
+	req = urllib2.Request(baseurl + 'upload_maps')
+	req.add_header('Authorization', 'Token ' + apitoken)
+	req.add_header('Content-Type', 'application/json')
+	req.add_data(json.dumps(payload, indent=4))
+	response = urllib2.urlopen(req)
+	data = json.reads(response.read())
+
+	return data
 
 def generateMap():
 
